@@ -29,7 +29,7 @@ public class ProjectSpringApplication {
 			AdminService admin = ctx.getBean(AdminService.class);
 
 //			Customer customer = new Customer(0, "a", "a", "a@a", "128376gh", null);
-//			Customer customer1 = new Customer(0, "b", "b", "b@b", "128376gh", null);
+			Customer customer1 = new Customer(0, "g", "g", "g@g", "128376gh", null);
 //			Customer customer2 = new Customer(0, "c", "c", "c@c", "128376gh", null);
 //			Customer customer3 = new Customer(0, "d", "d", "d@d", "128376gh", null);
 //			Customer customer4 = new Customer(0, "e", "e", "e@e", "128376gh", null);
@@ -51,14 +51,14 @@ public class ProjectSpringApplication {
 //			admin.addNewCompany(company4);
 
 	
-			admin.deleteCompany(4);
+			System.out.println(admin.getOneCustomer(1));
 //			admin.updateComapny(1, company);
 			
 //			System.out.println(admin.getAllCompanies());
 //			Company com = admin.getOneCompany(4);
 //			Coupon coupon = new Coupon(0, com, 5, "coupon1", "the best coupon", "c://", LocalDateTime.now(),
 //					LocalDateTime.now().plusDays(5), 15.5, Category.ELECTRICITY);
-////
+//
 //			CompanyService companyService = ctx.getBean(CompanyService.class);
 //			companyService.setId(4);
 //			companyService.addNewCoupon(coupon);
