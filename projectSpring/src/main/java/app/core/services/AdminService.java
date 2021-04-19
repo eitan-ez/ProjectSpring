@@ -7,6 +7,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import app.core.entities.Company;
@@ -18,6 +19,7 @@ import app.core.repositories.CustomerRepository;
 
 @Service
 @Transactional
+@Scope("singleton")
 public class AdminService extends ClientService{
 
 	/**
@@ -26,6 +28,7 @@ public class AdminService extends ClientService{
 	 * @return true if the email and password correct, false if not
 	 */
 
+	@Override
 	public boolean login(String email, String password) {
 		if (email.equalsIgnoreCase("admin@admin.com") && password.equalsIgnoreCase("admin"))
 			return true;

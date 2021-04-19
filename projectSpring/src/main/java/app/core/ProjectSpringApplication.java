@@ -2,6 +2,10 @@ package app.core;
 
 import java.time.LocalDateTime;
 
+import app.core.login.LoginManager;
+import app.core.tests.LoginManagerTest;
+import app.core.threads.CouponExpirationDailyJob;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -24,7 +28,11 @@ public class ProjectSpringApplication {
 	public static void main(String[] args) {
 		try {
 
+
 			ConfigurableApplicationContext ctx = SpringApplication.run(ProjectSpringApplication.class, args);
+//			CouponExpirationDailyJob.startThread(ctx);
+
+//			LoginManagerTest.runTest(ctx);
 
 			AdminService admin = ctx.getBean(AdminService.class);
 
@@ -38,8 +46,8 @@ public class ProjectSpringApplication {
 //			admin.addNewCustomer(customer2);
 //			admin.addNewCustomer(customer3);
 //			admin.addNewCustomer(customer4);
-//
-			Company company = new Company(0, "com1", "com12@a", "13fd897h", null);
+
+//			Company company = new Company(0, "com1", "com12@a", "13fd897h", null);
 //			Company company1 = new Company(0, "com2", "com2@a", "13fd897h", null);
 //			Company company2 = new Company(0, "com3", "com3@a", "13fd897h", null);
 //			Company company3 = new Company(0, "com4", "com4@a", "13fd897h", null);
@@ -51,7 +59,8 @@ public class ProjectSpringApplication {
 //			admin.addNewCompany(company4);
 
 	
-			System.out.println(admin.getOneCustomer(1));
+			// System.out.println(admin.getOneCustomer(1));
+//			admin.deleteCompany(4);
 //			admin.updateComapny(1, company);
 			
 //			System.out.println(admin.getAllCompanies());
