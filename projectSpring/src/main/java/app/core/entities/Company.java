@@ -39,14 +39,6 @@ public class Company {
 		this.password = password;
 		this.coupons = coupons;
 	}
-
-	public Company(int idCompany, String name, String email, String password) {
-		this.id = idCompany;
-		this.name = name;
-		this.email = email;
-		this.password = password;
-	}
-
 	public Company(int idCompany) {
 		this.id = idCompany;
 	}

@@ -7,16 +7,15 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import app.core.entities.Coupon;
 import app.core.entities.Customer;
 import app.core.exceptions.CouponSystemException;
 
+@ComponentScan("app.core")
 @Service
 @Transactional
-@Scope("prototype")
 public class CustomerService extends ClientService {
 
 	private int id;
@@ -28,7 +27,6 @@ public class CustomerService extends ClientService {
 		this.id = id;
 	}
 
-	@Override
 	public boolean login(String email, String password) {
 		if (custRep.existsCustomerByEmailAndPassword(email, password))
 			return true;
